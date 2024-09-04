@@ -1,0 +1,70 @@
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('./img/wp2300442.jpg');
+    background-size:cover;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    height: 50vh;
+    width: 50vw;
+    margin-top: 5%;
+    padding: 20px;
+    box-shadow: 3px 3px 10px #000;
+    background: rgb(256, 256, 256, 0.6);
+    border-radius: 1rem;
+}
+.ConverstionResult{
+   color: #1CFF0D;
+   font-size: large;
+   font-weight: bold;
+   padding: 1rem;
+   background-color: #00060A;
+   border-radius: 1rem;
+}
+.inputCurrency1,
+.inputCurrency2 {
+    width: 300px;
+}
+
+input {
+    padding: 10px;
+}
+
+label {
+    font-size: large;
+    font-weight: bold;
+    padding-right: 50px;
+}
+
+button {
+    background-color: #238636;
+    padding: 0.5rem;
+    width: 25vh;
+    border: none;
+    border-radius: 0.5rem;
+    transition: background-color 1ms ease-in;
+}
+
+button:hover {
+    background-color: #52c368;
+}
+
+button:active {
+    background-color: #238636;
+}
+
+@media (max-width:500px) {
+    .container{
+        width: 90vw;
+        padding : 1rem;
+    }
+}
