@@ -67,6 +67,6 @@ button:active {
 @media (max-width:500px) {
     .container{
         width: 90vw;
-        padding : 1rem;
+        padding : 2rem;
     }
 }
