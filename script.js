@@ -198,12 +198,15 @@ currencies.map((currency) => {
 })
 
 async function convert() {
+    const baseCurrencyValue = document.getElementsByClassName("baseCurrencyValue")[0].value
+    if(inputCurrency1[0].value && inputCurrency2[0].value && baseCurrencyValue){
     const data = await fetch(`https://api.currencyapi.com/v3/latest?apikey=cur_live_YfUa0TJwkNHwfIInlojpgiOHFb8Kw0inI5rcCkTv&currencies=${inputCurrency2[0].value.slice(0, 3)}&base_currency=${inputCurrency1[0].value.slice(0, 3)}`)
     const response = await data.json()
-    const baseCurrencyValue = document.getElementsByClassName("baseCurrencyValue")[0].value
     let targetCurrency = Object.entries(response)[1][1]
     let targetCurrencyValue = Object.values(targetCurrency)[0].value
-    document.getElementsByClassName("ConverstionResult")[0].textContent = `${baseCurrencyValue} ${inputCurrency1[0].value} = ${(baseCurrencyValue*targetCurrencyValue)} ${inputCurrency2[0].value}`
+    console.log(response)
+    }
+    document.getElementsByClassName("ConverstionResult")[0].textContent = inputCurrency1[0].value && inputCurrency2[0].value && baseCurrencyValue?`${baseCurrencyValue} ${inputCurrency1[0].value} = ${(baseCurrencyValue*targetCurrencyValue)} ${inputCurrency2[0].value}`: 'Select all fields'
 }
 
 
