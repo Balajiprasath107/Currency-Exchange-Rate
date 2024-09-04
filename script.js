@@ -205,8 +205,11 @@ async function convert() {
     let targetCurrency = Object.entries(response)[1][1]
     let targetCurrencyValue = Object.values(targetCurrency)[0].value
     console.log(response)
+    document.getElementsByClassName("ConverstionResult")[0].textContent = `${baseCurrencyValue} ${inputCurrency1[0].value} = ${(baseCurrencyValue*targetCurrencyValue)} ${inputCurrency2[0].value}`
     }
-    document.getElementsByClassName("ConverstionResult")[0].textContent = inputCurrency1[0].value && inputCurrency2[0].value && baseCurrencyValue?`${baseCurrencyValue} ${inputCurrency1[0].value} = ${(baseCurrencyValue*targetCurrencyValue)} ${inputCurrency2[0].value}`: 'Select all fields'
+    else
+    document.getElementsByClassName("ConverstionResult")[0].textContent = 'Select all fields'
+
 }
 
 
